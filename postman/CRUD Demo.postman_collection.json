@@ -1,0 +1,248 @@
+{
+	"id": "d68bd527-782a-6872-dbe1-1ed7092bf9ce",
+	"name": "CRUD Demo",
+	"description": "",
+	"order": [
+		"a3699b71-d710-2dad-39ac-a1cfcb5e9d00",
+		"776936f0-c3b9-21f5-43a1-14a8e32ce65b",
+		"089809f1-8c51-bbd7-4dac-84961def0054",
+		"f132c426-b670-f5c4-b398-c852080fbabe",
+		"f102b6e3-45aa-cf13-1fb2-910e1e124bf9",
+		"e4b7e63f-ad32-4777-ad19-e9045edeebf6"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1574253250889,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "089809f1-8c51-bbd7-4dac-84961def0054",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNDc1ODQsImlhdCI6MTU3NDMxMTU4NH0.gFj-glRZd4FCy9pM21srGN5I7qIj9x1mfh7VN0w8-c0\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNDc1ODQsImlhdCI6MTU3NDMxMTU4NH0.gFj-glRZd4FCy9pM21srGN5I7qIj9x1mfh7VN0w8-c0",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/employees?Content-Type=application/json",
+			"queryParams": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574344473826,
+			"name": "Get All Employee Data",
+			"description": "",
+			"collectionId": "d68bd527-782a-6872-dbe1-1ed7092bf9ce",
+			"responses": []
+		},
+		{
+			"id": "776936f0-c3b9-21f5-43a1-14a8e32ce65b",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNzg2MDAsImlhdCI6MTU3NDM0MjYwMH0.iezSghTXXFWrgX11FLo_p1xLXXdoc1ubJC85hqAuKwA\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNzg2MDAsImlhdCI6MTU3NDM0MjYwMH0.iezSghTXXFWrgX11FLo_p1xLXXdoc1ubJC85hqAuKwA",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/save?Content-Type=application/json",
+			"queryParams": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574344484180,
+			"name": "Save Employee Data",
+			"description": "",
+			"collectionId": "d68bd527-782a-6872-dbe1-1ed7092bf9ce",
+			"responses": [],
+			"rawModeData": "{\n  \"employeeName\": \"mehta\",\n  \"employeeDepartment\": \"Management\"\n}"
+		},
+		{
+			"id": "a3699b71-d710-2dad-39ac-a1cfcb5e9d00",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNDc1ODQsImlhdCI6MTU3NDMxMTU4NH0.gFj-glRZd4FCy9pM21srGN5I7qIj9x1mfh7VN0w8-c0\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNDc1ODQsImlhdCI6MTU3NDMxMTU4NH0.gFj-glRZd4FCy9pM21srGN5I7qIj9x1mfh7VN0w8-c0",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/employee/1",
+			"queryParams": [
+				{
+					"key": "",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "employeeId",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": false
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574344460961,
+			"name": "Get Employee",
+			"description": "",
+			"collectionId": "d68bd527-782a-6872-dbe1-1ed7092bf9ce",
+			"responses": []
+		},
+		{
+			"id": "e4b7e63f-ad32-4777-ad19-e9045edeebf6",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNzg2MDAsImlhdCI6MTU3NDM0MjYwMH0.iezSghTXXFWrgX11FLo_p1xLXXdoc1ubJC85hqAuKwA\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNzg2MDAsImlhdCI6MTU3NDM0MjYwMH0.iezSghTXXFWrgX11FLo_p1xLXXdoc1ubJC85hqAuKwA",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/delete/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "d68bd527-782a-6872-dbe1-1ed7092bf9ce",
+			"data": null,
+			"dataMode": "params",
+			"name": "Delete Employee Data",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1574344577975,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f102b6e3-45aa-cf13-1fb2-910e1e124bf9",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/authenticate",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d68bd527-782a-6872-dbe1-1ed7092bf9ce",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Create Token",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1574310324205,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"username\":\"foo\",\n\t\"password\":\"foo\"\n}"
+		},
+		{
+			"id": "f132c426-b670-f5c4-b398-c852080fbabe",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNzg2MDAsImlhdCI6MTU3NDM0MjYwMH0.iezSghTXXFWrgX11FLo_p1xLXXdoc1ubJC85hqAuKwA\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmb28iLCJleHAiOjE1NzQzNzg2MDAsImlhdCI6MTU3NDM0MjYwMH0.iezSghTXXFWrgX11FLo_p1xLXXdoc1ubJC85hqAuKwA",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/update?Content-Type=application/json",
+			"queryParams": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574344507518,
+			"name": "Update Employee Data",
+			"description": "",
+			"collectionId": "d68bd527-782a-6872-dbe1-1ed7092bf9ce",
+			"responses": [],
+			"rawModeData": "{\n  \"employeeId\": 3,\n  \"employeeName\": \"sahil\",\n  \"employeeDepartment\": \"Management\"\n}"
+		}
+	]
+}
