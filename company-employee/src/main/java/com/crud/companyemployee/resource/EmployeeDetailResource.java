@@ -1,4 +1,4 @@
-package com.crud.companyemployee.controller;
+package com.crud.companyemployee.resource;
 
 import com.crud.companyemployee.dto.EmployeeDto;
 import com.crud.companyemployee.service.EmployeeDetailService;
@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.crud.companyemployee.constant.AppConstant.API_ROOT_URL;
+import static com.crud.companyemployee.constant.AppConstant.*;
 
 @Slf4j
 @RestController
 @RequestMapping(value = API_ROOT_URL)
-public class EmployeeDetailController {
+public class EmployeeDetailResource {
 
     private EmployeeDetailService employeeDetailService;
 
     @Autowired
-    public EmployeeDetailController(EmployeeDetailService employeeDetailService) {
+    public EmployeeDetailResource(EmployeeDetailService employeeDetailService) {
         this.employeeDetailService = employeeDetailService;
     }
 
@@ -32,10 +32,10 @@ public class EmployeeDetailController {
     //4. update employee details
     //5. delete employee details
 
-    @GetMapping(value = "/employee/{employeeId}",
+    @GetMapping(value = GET_EMPLOYEE_ID_URL,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getEmployeeData(@PathVariable Long employeeId) throws Exception {
-        log.info("Inside class -> EmployeeDetailController method -> getEmployeeData()");
+        log.info("Inside class -> EmployeeDetailResource method -> getEmployeeData()");
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
@@ -46,10 +46,10 @@ public class EmployeeDetailController {
                 .body(employeeDetails);
     }
 
-    @GetMapping(value = "/employees",
+    @GetMapping(value = GET_ALL_EMPLOYEES_URL,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getAllEmployeesData() {
-        log.info("Inside class -> EmployeeDetailController method -> getAllEmployeesData()");
+        log.info("Inside class -> EmployeeDetailResource method -> getAllEmployeesData()");
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
@@ -60,10 +60,10 @@ public class EmployeeDetailController {
                 .body(employeeDetailsList);
     }
 
-    @PostMapping(value = "/save",
+    @PostMapping(value = SAVE_EMPLOYEE_URL,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> saveEmployeeDetails(@RequestBody EmployeeDto employeeDto) {
-        log.info("Inside class -> EmployeeDetailController method -> saveEmployeeDetails()");
+        log.info("Inside class -> EmployeeDetailResource method -> saveEmployeeDetails()");
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
@@ -71,10 +71,10 @@ public class EmployeeDetailController {
         return new ResponseEntity<>(resultEmployeeDto, HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/update",
+    @PutMapping(value = UPDATE_EMPLOYEE_URL,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> updateEmployeeDetails(@RequestBody EmployeeDto employeeDto) {
-        log.info("Inside class -> EmployeeDetailController method -> updateEmployeeDetails()");
+        log.info("Inside class -> EmployeeDetailResource method -> updateEmployeeDetails()");
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
@@ -85,9 +85,9 @@ public class EmployeeDetailController {
                 .body(resultEmployeeDto);
     }
 
-    @DeleteMapping(value = "/delete/{employeeId}")
+    @DeleteMapping(value = DELETE_EMPLOYEE_ID_URL)
     public ResponseEntity<?> deleteEmployeeDetails(@PathVariable Long employeeId) {
-        log.info("Inside class -> EmployeeDetailController method -> deleteEmployeeDetails()");
+        log.info("Inside class -> EmployeeDetailResource method -> deleteEmployeeDetails()");
 
         HttpHeaders headers = new HttpHeaders();
         final String resultMessage = employeeDetailService.deleteEmployeeData(employeeId);

@@ -13,13 +13,13 @@ public class Employee {
 
     @Id
     @GeneratedValue
-    @Column (name = "EMPLOYEE_ID")
+    @Column(name = "EMPLOYEE_ID")
     private Long id;
 
-    @Column (name = "EMPLOYEE_NAME")
+    @Column(name = "EMPLOYEE_NAME")
     private String name;
 
-    @Column (name = "EMPLOYEE_DEPT")
+    @Column(name = "EMPLOYEE_DEPT")
     private String department;
 
 }

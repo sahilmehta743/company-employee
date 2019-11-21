@@ -1,4 +1,4 @@
-package com.crud.companyemployee.controller;
+package com.crud.companyemployee.resource;
 
 import com.crud.companyemployee.model.AuthenticationRequest;
 import com.crud.companyemployee.model.AuthenticationResponse;
@@ -16,18 +16,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.crud.companyemployee.constant.AppConstant.API_ROOT_URL;
+
 @Slf4j
 @RestController
-@RequestMapping("/api")
-public class AuthenticateController {
+@RequestMapping(API_ROOT_URL)
+public class AuthenticateResource {
 
     private AuthenticationManager authenticationManager;
     private JwtUtil jwtTokenUtil;
     private MyUserDetailsService myUserDetailsService;
 
     @Autowired
-    public AuthenticateController(AuthenticationManager authenticationManager,
-                                  JwtUtil jwtTokenUtil, MyUserDetailsService myUserDetailsService) {
+    public AuthenticateResource(AuthenticationManager authenticationManager,
+                                JwtUtil jwtTokenUtil, MyUserDetailsService myUserDetailsService) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenUtil = jwtTokenUtil;
         this.myUserDetailsService = myUserDetailsService;
@@ -35,7 +37,7 @@ public class AuthenticateController {
 
     @PostMapping(value = "/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
-        log.info("Inside class -> AuthenticateController method -> createAuthenticationToken()");
+        log.info("Inside class -> AuthenticateResource method -> createAuthenticationToken()");
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword())
@@ -47,7 +49,7 @@ public class AuthenticateController {
                 .loadUserByUsername(authenticationRequest.getUsername());
         final String jwt = jwtTokenUtil.generateToken(userDetails);
 
-        log.info("Outside class -> AuthenticateController method -> createAuthenticationToken()");
+        log.info("Outside class -> AuthenticateResource method -> createAuthenticationToken()");
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
     }
 }
