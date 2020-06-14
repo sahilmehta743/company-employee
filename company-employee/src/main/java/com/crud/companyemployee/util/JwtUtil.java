@@ -5,7 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Slf4j
-@Service
+@Component
 public class JwtUtil {
     private String SECRET_KEY = "secret";
 
@@ -47,7 +47,6 @@ public class JwtUtil {
     }
 
     private String createToken(Map<String, Object> claims, String subject) {
-        log.info("Inside class -> JwtUtil method -> createToken()");
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)

@@ -35,8 +35,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        log.info("Inside class -> JwtRequestFilter method -> doFilterInternal()");
-
         String authorizationHeader = request.getHeader("Authorization");
 
         String userName = null;
@@ -59,6 +57,5 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
         }
         filterChain.doFilter(request, response);
-        log.info("Outside class -> JwtRequestFilter method -> doFilterInternal()");
     }
 }

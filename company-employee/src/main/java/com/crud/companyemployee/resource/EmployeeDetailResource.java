@@ -35,8 +35,6 @@ public class EmployeeDetailResource {
     @GetMapping(value = GET_EMPLOYEE_ID_URL,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getEmployeeData(@PathVariable Long employeeId) throws Exception {
-        log.info("Inside class -> EmployeeDetailResource method -> getEmployeeData()");
-
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
         final EmployeeDto employeeDetails = employeeDetailService.getEmployeeData(employeeId);
@@ -49,8 +47,6 @@ public class EmployeeDetailResource {
     @GetMapping(value = GET_ALL_EMPLOYEES_URL,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getAllEmployeesData() {
-        log.info("Inside class -> EmployeeDetailResource method -> getAllEmployeesData()");
-
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
         final List<EmployeeDto> employeeDetailsList = employeeDetailService.getAllEmployeeData();
@@ -63,8 +59,6 @@ public class EmployeeDetailResource {
     @PostMapping(value = SAVE_EMPLOYEE_URL,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> saveEmployeeDetails(@RequestBody EmployeeDto employeeDto) {
-        log.info("Inside class -> EmployeeDetailResource method -> saveEmployeeDetails()");
-
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
         final EmployeeDto resultEmployeeDto = employeeDetailService.saveEmployeeData(employeeDto);
@@ -74,8 +68,6 @@ public class EmployeeDetailResource {
     @PutMapping(value = UPDATE_EMPLOYEE_URL,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> updateEmployeeDetails(@RequestBody EmployeeDto employeeDto) {
-        log.info("Inside class -> EmployeeDetailResource method -> updateEmployeeDetails()");
-
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
         final EmployeeDto resultEmployeeDto = employeeDetailService.updateEmployeeData(employeeDto);
@@ -87,8 +79,6 @@ public class EmployeeDetailResource {
 
     @DeleteMapping(value = DELETE_EMPLOYEE_ID_URL)
     public ResponseEntity<?> deleteEmployeeDetails(@PathVariable Long employeeId) {
-        log.info("Inside class -> EmployeeDetailResource method -> deleteEmployeeDetails()");
-
         HttpHeaders headers = new HttpHeaders();
         final String resultMessage = employeeDetailService.deleteEmployeeData(employeeId);
         return ResponseEntity

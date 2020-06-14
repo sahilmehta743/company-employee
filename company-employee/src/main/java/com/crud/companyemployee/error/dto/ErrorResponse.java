@@ -15,6 +15,7 @@ import java.util.List;
 @JsonPropertyOrder({"errorCode", "developerMessages", "userMessage"})
 public class ErrorResponse implements Serializable {
 
+    private static final long serialVersionUID = 3286287681294812674L;
     @Singular
     private List<String> developerMessages;
     private String errorCode;

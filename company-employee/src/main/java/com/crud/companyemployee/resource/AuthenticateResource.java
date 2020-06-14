@@ -37,7 +37,6 @@ public class AuthenticateResource {
 
     @PostMapping(value = "/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
-        log.info("Inside class -> AuthenticateResource method -> createAuthenticationToken()");
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword())
@@ -48,8 +47,6 @@ public class AuthenticateResource {
         final UserDetails userDetails = myUserDetailsService
                 .loadUserByUsername(authenticationRequest.getUsername());
         final String jwt = jwtTokenUtil.generateToken(userDetails);
-
-        log.info("Outside class -> AuthenticateResource method -> createAuthenticationToken()");
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
     }
 }
