@@ -68,10 +68,11 @@ public class EmployeeDetailServiceTest {
     }
 
     @Test
-    @Ignore
     public void shouldSaveEmployeeData() {
-        EmployeeDto employeeDto = new EmployeeDto();
-        final EmployeeDto resultEmployeeDto = employeeDetailService.saveEmployeeData(employeeDto);
+        Employee employee = new Employee();
+        //when(employeeDetailRepository.save(any(Employee.class))).thenReturn();
+        //final EmployeeDto resultEmployeeDto = employeeDetailService.saveEmployeeData(employee);
+
     }
 
 
