@@ -6,7 +6,6 @@ import com.crud.companyemployee.error.EmployeeDetailException;
 import com.crud.companyemployee.repository.EmployeeDetailRepository;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -66,15 +65,6 @@ public class EmployeeDetailServiceTest {
 
         verify(employeeDetailRepository, times(1)).findAll();
     }
-
-    @Test
-    public void shouldSaveEmployeeData() {
-        Employee employee = new Employee();
-        //when(employeeDetailRepository.save(any(Employee.class))).thenReturn();
-        //final EmployeeDto resultEmployeeDto = employeeDetailService.saveEmployeeData(employee);
-
-    }
-
 
     @After
     public void tearDown() {

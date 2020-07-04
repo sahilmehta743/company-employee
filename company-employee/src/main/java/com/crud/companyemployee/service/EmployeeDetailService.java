@@ -8,6 +8,7 @@ import com.crud.companyemployee.repository.EmployeeDetailRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -37,6 +38,9 @@ public class EmployeeDetailService {
     public List<EmployeeDto> getAllEmployeeData() {
         List<Employee> employees = employeeDetailRepository.findAll();
         List<EmployeeDto> employeesDto = new ArrayList<>();
+        if (CollectionUtils.isEmpty(employees)) {
+            throw new EmployeeDetailException("No employees found.");
+        }
         for (Employee employee : employees) {
             EmployeeDto employeeDto = EmployeeEntityToDtoMapper.map(employee);
             employeesDto.add(employeeDto);
