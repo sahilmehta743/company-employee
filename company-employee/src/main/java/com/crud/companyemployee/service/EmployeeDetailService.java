@@ -19,7 +19,7 @@ import java.util.Optional;
 @Service
 public class EmployeeDetailService {
 
-    private EmployeeDetailRepository employeeDetailRepository;
+    private final EmployeeDetailRepository employeeDetailRepository;
 
     @Autowired
     public EmployeeDetailService(EmployeeDetailRepository employeeDetailRepository) {
